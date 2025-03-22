@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Authentication System",
+    "imageSrc": "projects/auth.png",
+    "description": "Secure & Seamless Authentication: A MERN-Based User Login System with JWT & Bcrypt Encryption 🔐🚀",
+    "skills": ["React", "Express", "Node", "JWT"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "Restful API",
+    "imageSrc": "projects/rest.png",
+    "description": "Built a scalable RESTful API using Node.js and Express, tested and optimized with Postman for reliability and performance.",
+    "skills": ["React", "Express", "Node", "Postman"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "Myntra Clone",
+    "imageSrc": "projects/myntra.png",
+    "description": "Built a responsive Myntra clone using HTML, CSS, and JavaScript, replicating the UI and enhancing user experience 🛍️",
+    "skills": ["HTML", "CSS", "JS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "Image Search Engine",
+    "imageSrc": "projects/search.jpg",
+    "description":"Built an Image Search Engine using HTML, CSS, and JavaScript, integrating the Unsplash API for seamless image retrieval.",
+    "skills": ["HTML", "CSS", "JS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  }
+]
