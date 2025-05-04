@@ -39,6 +39,11 @@
   margin-bottom: 52px;
 }
 
+.btnContainer {
+  display: flex;
+  gap: 20px;
+}
+
 .contactBtn {
   text-decoration: none;
   background-color: var(--color-primary);
@@ -48,6 +53,13 @@
   font-weight: 600;
   padding: 17px 26px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: rgba(25, 55, 109, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .heroImg {
@@ -107,5 +119,27 @@
 
   .content {
     align-items: center;
+  }
+  
+  .btnContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 60px;
+  }
+  
+  .description {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .contactBtn {
+    font-size: 24px;
+    padding: 14px 22px;
   }
 }

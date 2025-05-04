@@ -12,9 +12,14 @@ export const Hero = () => {
           I'm a full-stack developer using React and
           NodeJS. Reach out if you'd like to learn more!
         </p>
-        <a href="#contact" className={styles.contactBtn}>
-    Contact Me
-</a>
+        <div className={styles.btnContainer}>
+          <a href="#contact" className={styles.contactBtn}>
+            Contact Me
+          </a>
+          <a href="/Sejal Bhole - Resume(3).pdf" className={styles.contactBtn} download>
+            Download CV
+          </a>
+        </div>
       </div>
       <img
         src={getImageUrl("hero/heroImage.png")}

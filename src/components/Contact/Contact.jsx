@@ -5,6 +5,8 @@ import { getImageUrl } from "../../utils";
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,6 +15,8 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
     
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
@@ -21,19 +25,23 @@ export const Contact = () => {
         body: JSON.stringify(formData),
       });
   
+      const data = await response.json();
+      
       if (response.ok) {
         console.log("Message sent successfully!");
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
       } else {
-        console.error("Failed to send message");
+        setError(data.error || "Failed to send message");
+        console.error("Failed to send message:", data.error);
       }
     } catch (error) {
+      setError("Network error. Please try again later.");
       console.error("Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
-  
-  
 
   return (
     <footer id="contact" className={styles.container}>
@@ -43,10 +51,9 @@ export const Contact = () => {
       </div>
       
       <ul className={styles.links}>
-        
         <li className={styles.link}>
           <img src={getImageUrl("contact/linkedinIcon.png")} alt="LinkedIn icon" />
-          <a href="www.linkedin.com/in/sejal-bhole-2524a6305">linkedin.com/SejalBhole</a>
+          <a href="https://www.linkedin.com/in/sejal-bhole-2524a6305">linkedin.com/SejalBhole</a>
         </li>
         <li className={styles.link}>
           <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
@@ -67,9 +74,14 @@ export const Contact = () => {
           Message:
           <textarea name="message" value={formData.message} onChange={handleChange} required />
         </label>
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
         {submitted && <p className={styles.successMessage}>Message sent successfully!</p>}
+        {error && <p className={styles.errorMessage}>{error}</p>}
       </form>
     </footer>
   );
 };
+
+export default Contact;
