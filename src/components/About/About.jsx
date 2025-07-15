@@ -15,32 +15,29 @@ export const About = () => {
         />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
+            <img src={getImageUrl("skills/react.png")} alt="React icon" />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                I specialize in creating dynamic, responsive user interfaces using modern frameworks like React, ensuring optimal user experience across all devices
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
+            <img src={getImageUrl("skills/node.png")} alt="Node.js icon" />
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                I build robust server-side applications and RESTful APIs using Node.js, Express, and databases, focusing on scalability and performance
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
+            <img src={getImageUrl("skills/html.png")} alt="Full Stack icon" />
             <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
+              <h3>Full Stack Developer</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                I seamlessly integrate frontend and backend technologies to deliver complete web solutions, from database design to user interface implementation
               </p>
             </div>
           </li>

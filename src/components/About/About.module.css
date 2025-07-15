@@ -9,6 +9,8 @@
   z-index: 1;
   margin-left: 10%;
   margin-right: 10%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .title {
@@ -17,24 +19,29 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
- 
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .content {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 40px;
 }
 
 .aboutImage {
   width: 35%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .aboutItems {
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
+  flex: 1;
 }
 
 .aboutItem {
@@ -43,7 +50,7 @@
   align-items: center;
   border-radius: 20px;
   list-style: none;
-  padding: 25px;
+  padding: 30px;
   background-image: linear-gradient(
     90deg,
     rgba(165, 215, 232, 0.42) 0%,
@@ -51,31 +58,57 @@
   );
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: 0.4s;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .aboutItem:hover {
   background-size: 100% 100%;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(165, 215, 232, 0.2);
+}
+
+.aboutItem img {
+  width: 60px;
+  height: 60px;
+  margin-right: 25px;
+  transition: transform 0.3s ease;
+}
+
+.aboutItem:hover img {
+  transform: scale(1.1);
+}
+
+.aboutItemText {
+  flex: 1;
 }
 
 .aboutItem h3 {
   font-size: 25px;
   font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-text);
 }
 
 .aboutItem p {
-  font-size: 25px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media screen and (max-width: 830px) {
   .container {
     background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .content {
     flex-direction: column;
+    gap: 30px;
   }
 
   .aboutImage {
@@ -83,11 +116,25 @@
   }
 
   .aboutItems {
-    margin-top: 29px;
+    margin-top: 20px;
   }
 
   .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutItem img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .aboutItem h3 {
+    font-size: 22px;
+  }
+
+  .aboutItem p {
+    font-size: 16px;
   }
 }
