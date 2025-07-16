@@ -15,32 +15,32 @@ export const About = () => {
         />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
+            <img src={getImageUrl("about/uiIcon.png")} alt="Frontend development icon" />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                I specialize in creating responsive, user-friendly interfaces with modern 
+                frameworks and technologies, ensuring optimal performance and seamless user experiences.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
+            <img src={getImageUrl("about/serverIcon.png")} alt="Backend development icon" />
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                I build robust, scalable server-side applications and APIs, implementing 
+                secure data management solutions and optimizing system performance.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
+            <img src={getImageUrl("about/serverIcon.png")} alt="Full stack development icon" />
             <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
+              <h3>Full Stack Developer</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                I bring together frontend and backend expertise to deliver complete web solutions, 
+                from database design to user interface, creating cohesive and scalable applications.
               </p>
             </div>
           </li>
