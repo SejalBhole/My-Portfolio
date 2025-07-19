@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Participation in Pixel Wizard Competition (Hackethon)",
+    "organization": "Sant Longowal Institute of Engineering and Technology, Punjab",
+    "link": "/assets/certificates/Hackethon1.pdf",
+    "imageSrc": "certifications/hackethon.png"
+  },
+  {
+    "title": "Introduction to MERN Stack",
+    "organization": "Simplilearn",
+    "link": "/assets/certificates/Mern certificate by SL.pdf",
+    "imageSrc": "certifications/mern.png"
+  },
+  {
+    "title": "NPTEL Data Structures and Algorithms",
+    "organization": "NPTEL",
+    "link": "/assets/certificates/nptel dsa.pdf",
+    "imageSrc": "certifications/nptel.png"
+  },
+  {
+    "title": "Soft Skills for Tech Professionals",
+    "organization": "TCS iON",
+    "link": "/assets/certificates/Soft Skills Certificate.pdf",
+    "imageSrc": "certifications/soft-skills.png"
+  },
+  {
+    "title": "Implementation of Deep Learning using Python",
+    "organization": "BVCOEL",
+    "link": "/assets/certificates/Python-Workshop.pdf",
+    "imageSrc": "certifications/python-workshop.png"
+  }
+] 

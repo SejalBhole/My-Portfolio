@@ -1,29 +1,32 @@
 [
   {
     "role": "Research and Machine Learning Intern",
-    "organisation": "IMD",
+    "organisation": "Indian Metrological Department",
+    "location": "Pune, India",
     "startDate": "July 24",
     "endDate": "Dec 24",
     "experiences": ["Studied various ML algorithms including Linear regression,CNN,Decision Tress", "Assisting in report preparation and documentation"],
-    "imageSrc": "history/google.png"
+    "imageSrc": "history/imd.png"
   },
   {
     "role": "Web Developer Intern",
-    "organisation": "Sumago Infotech Pvt. Ltd, Nashik ",
+    "organisation": "Sumago Infotech Pvt. Ltd ",
+    "location": "Nashik, India",
     "startDate": "July 22",
     "endDate": "Aug 22",
     "experiences": ["Gained hands-on experience in HTML, CSS, JavaScript, PHP", "Contributed to a  Tourism Website Project "],
-    "imageSrc": "history/microsoft.png"
+    "imageSrc": "history/sumago.png"
   },
   {
     "role": "Full Stack Developer",
-    "organisation": "Technohacks Solutions Pvt.Ltd,Nashik",
+    "organisation": "Technohacks Solutions Pvt.Ltd",
+    "location": "Nashik, India",
     "startDate": "Jan 25",
     "endDate": "Feb 25",
     "experiences": [
       "Built RESTful APIs using Node.js and Express.js",
       "Managed MongoDB database", "Used Git and GitHub for version control"
     ],
-    "imageSrc": "history/netflix.png"
+    "imageSrc": "history/techno.png"
   }
 ]

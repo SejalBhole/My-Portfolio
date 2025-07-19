@@ -1,51 +1,57 @@
 import React from "react";
-
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
 
-export const About = () => {
-  return (
-    <section className={styles.container} id="about">
-      <h2 className={styles.title}>About</h2>
-      <div className={styles.content}>
-        <img
-          src={getImageUrl("about/aboutImage.png")}
-          alt="Me sitting with a laptop"
-          className={styles.aboutImage}
-        />
-        <ul className={styles.aboutItems}>
-          <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
+// Updated card data with relevant icons and improved descriptions
+const aboutItems = [
+  {
+    icon: "about/frontend-icon.png", // New icon for frontend
+    alt: "Monitor icon representing frontend development",
+    title: "Frontend Developer",
+    description:
+      "Designs and implements engaging user interfaces using modern frameworks like React. Responsible for translating design mockups into responsive, accessible, and high-performance web applications, ensuring optimal user experience across devices.",
+  },
+  {
+    icon: "about/backend-icon.png", // New icon for backend
+    alt: "Database and gear icon representing backend development",
+    title: "Backend Developer",
+    description:
+      "Architects and maintains the server-side logic, databases, and APIs. Ensures data integrity, security, and scalability by leveraging technologies such as Node.js, Express, and database systems to power robust application functionality.",
+  },
+  {
+    icon: "about/fullstack-icon.png", // New icon for full stack
+    alt: "Person at computer icon representing full stack development",
+    title: "Full Stack Developer",
+    description:
+      "Bridges frontend and backend development to deliver complete, end-to-end solutions. Integrates user interfaces with server logic, manages deployment pipelines, and ensures seamless operation of all application layers.",
+  },
+];
+
+export const About = () => (
+  <section className={styles.container} id="about" aria-labelledby="about-title" role="region">
+    <h2 className={styles.title} id="about-title">About</h2>
+    <div className={styles.content}>
+      <img
+        src={getImageUrl("about/aboutImage.png")}
+        alt="Portrait of developer at a desk"
+        className={styles.aboutImage}
+        loading="eager"
+      />
+      <ul className={styles.aboutItems} aria-label="Developer roles and expertise">
+        {aboutItems.map((item) => (
+          <li key={item.title} className={styles.aboutItem} aria-label={item.title}>
+            <img
+              src={getImageUrl(item.icon)}
+              alt={item.alt}
+              className={styles.icon}
+            />
             <div className={styles.aboutItemText}>
-              <h3>Frontend Developer</h3>
-              <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
-              </p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           </li>
-          <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
-            <div className={styles.aboutItemText}>
-              <h3>Backend Developer</h3>
-              <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
-              </p>
-            </div>
-          </li>
-          <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
-            <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
-              <p>
-                I have designed multiple landing pages and have created design
-                systems as well
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-  );
-};
+        ))}
+      </ul>
+    </div>
+  </section>
+);

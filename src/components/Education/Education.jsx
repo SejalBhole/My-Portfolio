@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Education.module.css';
-import { FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaGraduationCap, FaTrophy, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
+import achievements from '../../data/achievements.json';
+import { getImageUrl } from "../../utils";
 
 const educationData = [
   {
@@ -30,48 +32,98 @@ const educationData = [
   },
 ];
 
-const Education = () => {
+const EducationAndAchievements = () => {
+  const [activeTab, setActiveTab] = useState('education');
+
   return (
-    <section className={styles.educationSection} id="education">
+    <section className={styles.educationSection} id="education" aria-label="Education and Achievements">
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <FaGraduationCap className={styles.headerIcon} />
-          <h2>Education</h2>
-        </div>
-        <div className={styles.timeline}>
-          <div className={styles.timelineLine}></div>
-          {educationData.map((edu, index) => (
-            <div
-              className={`${styles.timelineItem} ${edu.side === 'left' ? styles.timelineLeft : styles.timelineRight}`}
-              key={index}
-            >
-              <span className={styles.timelineDot}></span>
-              <div className={styles.cardWrapper}>
-                <div className={`${styles.card} ${edu.side === 'left' ? styles.cardLeft : styles.cardRight}`}>
-                  <div className={styles.cardContent}>
-                    <div className={styles.institution}>{edu.institution}</div>
-                    <div className={styles.degree}>{edu.degree}</div>
-                    {edu.university && <div className={styles.university}>{edu.university}</div>}
-                    <div className={styles.infoItem}>
-                      <FaMapMarkerAlt className={styles.infoIcon} />
-                      <span>{edu.location}</span>
-                    </div>
-                    <div className={styles.infoItem}>
-                      <FaCalendarAlt className={styles.infoIcon} />
-                      <span>{edu.duration}</span>
-                    </div>
-                    <div className={styles.infoItem}>
-                      <span className={styles.score}>{edu.score}</span>
+        <header className={styles.sectionHeader}>
+          <button
+            className={`${styles.tabBtn} ${activeTab === 'education' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('education')}
+            aria-selected={activeTab === 'education'}
+          >
+            <FaGraduationCap className={styles.headerIcon} aria-hidden="true" />
+            Education
+          </button>
+          <button
+            className={`${styles.tabBtn} ${activeTab === 'achievements' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('achievements')}
+            aria-selected={activeTab === 'achievements'}
+          >
+            <FaTrophy className={styles.headerIcon} aria-hidden="true" />
+            Achievements
+          </button>
+        </header>
+        <div className={styles.tabDivider}></div>
+        {activeTab === 'education' ? (
+          <div className={styles.timeline}>
+            <div className={styles.timelineLine} aria-hidden="true"></div>
+            {educationData.map((edu, index) => (
+              <article
+                className={`${styles.timelineItem} ${edu.side === 'left' ? styles.timelineLeft : styles.timelineRight}`}
+                key={index}
+                tabIndex={0}
+                aria-label={`${edu.degree} at ${edu.institution}`}
+              >
+                <span className={styles.timelineDot} aria-hidden="true"></span>
+                <div className={styles.cardWrapper}>
+                  <div className={`${styles.card} ${edu.side === 'left' ? styles.cardLeft : styles.cardRight}`}>
+                    <div className={styles.cardContent}>
+                      <div className={styles.institution}>{edu.institution}</div>
+                      <div className={styles.degree}>{edu.degree}</div>
+                      {edu.university && <div className={styles.university}>{edu.university}</div>}
+                      <div className={styles.infoItem}>
+                        <FaMapMarkerAlt className={styles.infoIcon} aria-hidden="true" />
+                        <span>{edu.location}</span>
+                      </div>
+                      <div className={styles.infoItem}>
+                        <FaCalendarAlt className={styles.infoIcon} aria-hidden="true" />
+                        <span>{edu.duration}</span>
+                      </div>
+                      <div className={styles.infoItem}>
+                        <span className={styles.score}>{edu.score}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className={styles.achievementsList}>
+            {achievements.map((ach, idx) => (
+              <div className={styles.achievementCard} key={idx}>
+                {ach.imageSrc && (
+                  <img
+                    src={getImageUrl(ach.imageSrc)}
+                    alt={ach.title}
+                    className={styles.achievementImg}
+                  />
+                )}
+                <FaTrophy className={styles.achievementIcon} aria-hidden="true" />
+                <div>
+                  <div className={styles.achievementTitle}>{ach.title}</div>
+                  <div className={styles.achievementDesc}>{ach.description}</div>
+                  {ach.certificateSrc && (
+                    <a
+                      href={getImageUrl(ach.certificateSrc)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.certificateLink}
+                    >
+                      View Certificate
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default Education;
+export default EducationAndAchievements;

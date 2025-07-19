@@ -1,0 +1,213 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 48px 5vw 40px 5vw;
+  background: rgba(12, 12, 12, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(87,108,188,0.10);
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* --- Tabs --- */
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  gap: 12px;
+  position: relative;
+}
+
+.tabDivider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-dark) 100%);
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.tabBtn {
+  background: none;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 24px 24px 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+  letter-spacing: 1px;
+  margin-bottom: -2px;
+  z-index: 1;
+}
+
+.tabBtn:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.activeTab {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-bottom: 2px solid transparent;
+  z-index: 2;
+}
+
+/* --- Skills Grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.skillCard {
+  background: rgba(165, 215, 232, 0.13);
+  border-radius: 16px;
+  padding: 18px 0 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.skillCard:focus-within, .skillCard:hover {
+  box-shadow: 0 4px 16px rgba(87,108,188,0.13);
+  outline: 2px solid var(--color-primary);
+  background: rgba(165, 215, 232, 0.22);
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.skillName {
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* --- Certifications List --- */
+.certificationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 32px;
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  background: rgba(165, 215, 232, 0.13);
+  border-radius: 16px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, background 0.2s;
+  gap: 24px;
+  cursor: pointer;
+}
+
+.certCard:focus-within, .certCard:hover {
+  box-shadow: 0 4px 16px rgba(87,108,188,0.13);
+  outline: 2px solid var(--color-primary);
+  background: rgba(165, 215, 232, 0.22);
+}
+
+.certIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.certText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.certTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.certOrg {
+  font-size: 1rem;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.certLink {
+  font-size: 0.98rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+  margin-top: 2px;
+  transition: color 0.2s;
+}
+
+.certLink:hover {
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 18px 2vw 12px 2vw;
+    margin-top: 32px;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .certificationsList {
+    margin-top: 18px;
+    gap: 14px;
+  }
+  .certCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 10px;
+  }
+  .certIcon {
+    margin-bottom: 4px;
+  }
+  .tabBtn {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+} 

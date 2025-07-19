@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Research Paper Presentation",
+    "description": "Presented a research paper at the International Conference on Recent Advances in Engineering and Science (ICRAES-2K25) held on 22-23 April 2025.",
+    "imageSrc": "achievements/research-certificate.png",
+    "certificateSrc": "RP Certificate.pdf"
+  },
+  {
+    "title": "Academic Excellence",
+    "description": "Ranked 1st in Second Year (S.E) and 2nd in Third Year (T.E) consecutively in Computer Engineering.",
+    "imageSrc": "achievements/TE Rank.jpeg"
+  },
+  {
+    "title": "Sunshine Award",
+    "description": "Received the Sunshine Award for excellent performance during Web Development training.",
+    "imageSrc": "achievements/Sumago.jpeg",
+    "certificateSrc": "certificates/Sunshine Certificate (1).pdf"
+  }
+] 

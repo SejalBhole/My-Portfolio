@@ -5,7 +5,12 @@
   --color-secondary: #19376d;
   --color-dark: #0b2447;
   --color-bg: #04152d;
+  --color-success: #4BB543;
+  --color-accent: #576cbc;
+  --color-accent-dark: #19376d;
 
   /* Fonts */
   --font-roboto: "Roboto";
+  --font-pacifico: 'Pacifico', cursive;
+  --font-montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
 }

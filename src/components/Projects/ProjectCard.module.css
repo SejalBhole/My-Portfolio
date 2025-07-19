@@ -1,66 +1,205 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
-  box-shadow: 0 16px 14px 0 #04152d;
-  padding: 18px 24px;
-  margin: 20px 20px;
-  max-width: 345px;
-  min-height: 500px; 
-  display: flex;
-  justify-content: space-between;
-  
+  border-radius: 18px;
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.13);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(87,108,188,0.13);
+  padding: 0 0 24px 0;
+  margin: 0;
+  max-width: 370px;
+  min-width: 0;
+  min-height: 480px;
+  width: 100%;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.animated {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.container:focus, .container:hover {
+  box-shadow: 0 12px 32px 0 rgba(87,108,188,0.18);
+  outline: 2px solid var(--color-primary);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .image {
   width: 100%;
-  height: 200px; 
-  object-fit: cover; 
-  border-radius: 8px;
-  margin-bottom: 20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(87,108,188,0.10);
 }
 
 .title {
-  font-size: 25px;
+  font-size: 1.3rem;
   font-weight: 700;
+  margin: 24px 24px 8px 32px;
+  color: var(--color-primary);
 }
 
 .description {
-  font-size: 18px; 
+  font-size: 1rem;
   font-weight: 400;
-  flex-grow: 1; 
+  margin: 0 24px 12px 32px;
+  color: var(--color-text);
+  flex-grow: 1;
 }
 
 .skills {
-  margin-top: 14px;
+  margin: 0 24px 0 32px;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   list-style: none;
 }
 
 .skill {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 0.98rem;
+  font-weight: 500;
   border-radius: 100px;
-  background: var(--color-dark);
+  background: linear-gradient(90deg, #576cbc 0%, #19376d 100%);
+  color: #fff;
   padding: 4px 14px;
+  margin-bottom: 4px;
+  box-shadow: 0 1px 4px rgba(87,108,188,0.10);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .links {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 18px;
 }
 
 .link {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 100px;
   background: var(--color-primary);
-  padding: 6px 16px;
+  padding: 8px 22px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(87,108,188,0.10);
+  outline: none;
+}
+
+.link:hover, .link:focus {
+  background: #19376d;
+  color: #fff;
+  outline: 2px solid var(--color-primary);
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(25, 30, 50, 0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInModal 0.3s;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1.5px solid rgba(87,108,188,0.18);
+  padding: 32px 32px 24px 32px;
+  min-width: 320px;
+  max-width: 98vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInModal 0.3s;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modalImage {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(87,108,188,0.10);
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.modalDescription {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 0 0 12px 0;
+  }
+  .title, .description, .skills {
+    margin-left: 16px;
+    margin-right: 12px;
+  }
+  .image {
+    height: 140px;
+  }
+  .modal {
+    padding: 12px 4px 10px 4px;
+  }
+  .modalImage {
+    height: 120px;
+  }
 }

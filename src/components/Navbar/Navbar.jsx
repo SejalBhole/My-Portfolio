@@ -5,6 +5,13 @@ import { getImageUrl } from "../../utils";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState(window.location.hash || '#about');
+
+  React.useEffect(() => {
+    const onHashChange = () => setActiveHash(window.location.hash || '#about');
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   return (
     <nav className={styles.navbar}>
@@ -27,21 +34,23 @@ export const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <li>
-            <a href="#about">About</a>
+            <a href="#about" className={activeHash === '#about' ? styles.menuItemActive : ''}>About</a>
           </li>
           <li>
-            <a href="#education">Education</a>
+            <a href="#education" className={activeHash === '#education' ? styles.menuItemActive : ''}>Education</a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#skills" className={activeHash === '#skills' ? styles.menuItemActive : ''}>Skills</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#experience" className={activeHash === '#experience' ? styles.menuItemActive : ''}>Experience</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#projects" className={activeHash === '#projects' ? styles.menuItemActive : ''}>Projects</a>
           </li>
-          
+          <li>
+            <a href="#contact" className={activeHash === '#contact' ? styles.menuItemActive : ''}>Contact</a>
+          </li>
         </ul>
       </div>
     </nav>

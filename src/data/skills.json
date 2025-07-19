@@ -26,5 +26,9 @@
   {
     "title": "DSA",
     "imageSrc": "skills/dsa.webp"
+  },
+  {
+    "title": "MySQL",
+    "imageSrc": "skills/mysql.png"
   }
 ]
