@@ -1,0 +1,10 @@
+@import "./vars.css";
+
+.App {
+  background: radial-gradient(ellipse at top, #0a2542 0%, #04152d 70%);
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 64px;
+}
